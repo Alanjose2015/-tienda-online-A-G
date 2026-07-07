@@ -66,6 +66,9 @@
 </footer>
 
 <script>
+    // TU NÚMERO CONFIGURADO CORRECTAMENTE
+    const TU_NUMERO_WHATSAPP = "5493815727447"; 
+
     const lista = [
         { n: "ADAPTADOR AUDIO HEMBRA A 2 JACK MACHO", c: "Tecno", p: 1600 },
         { n: "ADAPTADOR IP A JACK 3.5 – BLANCO", c: "Tecno", p: 3999 },
@@ -80,14 +83,18 @@
         { n: "FREIDORA DE AIRE 1800W 10L", c: "Hogar", p: 85000 },
         { n: "TV BOX STREAM CORE 4-32GB", c: "Hogar", p: 39000 },
         { n: "PROYECTOR ORVA-HY300", c: "Hogar", p: 79999 },
-        { n: "PARLANTE 15” MODV-0036", c: "Audio", p: 149999 }
+        { n: "PARLANTE 15” MODV-0036", c: "Audio", <a href="https://ventastucumanalan.blogspot.com/2026/07/producto-tienda-a.html" target="_blank" style="text-decoration: none; display: inline-block;">
+  <img src="https://ventastucumanalan.blogspot.com/2026/07/producto-tienda-a.html" alt="Producto Tienda A" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #ddd; display: block;">
+</a>
+p: 149999 }
     ];
 
     function mostrar(prod) {
         const div = document.getElementById('productos');
         div.innerHTML = prod.map(i => {
             const textoMensaje = "¡Hola Alan! Quiero pedir: " + i.n + " ($" + i.p.toLocaleString() + ")";
-            const urlWa = "https://whatsapp.com" + encodeURIComponent(textoMensaje);
+            // Enlace corregido usando wa.me
+            const urlWa = `https://wa.me/${TU_NUMERO_WHATSAPP}?text=${encodeURIComponent(textoMensaje)}`;
             
             return `
                 <div class="card">
@@ -116,4 +123,4 @@
 </script>
 </body>
                 </html>
-                
+                                                                          
