@@ -23,6 +23,8 @@
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 800px; margin: auto; }
         .card { background: white; padding: 15px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; }
         .card h3 { font-size: 10px; margin: 0 0 10px 0; height: 35px; overflow: hidden; color: #444; line-height: 1.2; text-transform: uppercase; }
+        .prod-link-img { display: block; margin-bottom: 10px; text-decoration: none; }
+        .prod-img { width: 100%; height: 120px; object-fit: cover; border-radius: 10px; border: 1px solid #eee; display: block; }
         .precio { color: #2ecc71; font-weight: 800; font-size: 20px; margin-bottom: 10px; display: block; }
         .btn-ws { background: #25d366; color: white; border: none; padding: 10px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 11px; text-transform: uppercase; display: block; }
         footer { background: #222; color: #fff; padding: 25px 15px; font-size: 12px; }
@@ -66,39 +68,39 @@
 </footer>
 
 <script>
-    // TU NÚMERO CONFIGURADO CORRECTAMENTE
     const TU_NUMERO_WHATSAPP = "5493815727447"; 
 
+    // Se agregó la propiedad 'img' (coloca el link directo de la foto terminada en .jpg/.png)
+    // Se agregó la propiedad 'link' para cuando hagan clic sobre la imagen
     const lista = [
-        { n: "ADAPTADOR AUDIO HEMBRA A 2 JACK MACHO", c: "Tecno", p: 1600 },
-        { n: "ADAPTADOR IP A JACK 3.5 – BLANCO", c: "Tecno", p: 3999 },
-        { n: "ADAPTADOR MICROSD A USB", c: "Tecno", p: 750 },
-        { n: "ADAPTADOR SIM", c: "Tecno", p: 499 },
-        { n: "ADAPTADOR HDMI A 2 HDMI", c: "Tecno", p: 3000 },
-        { n: "MODULADOR FM ALS-A09 – NEGRO", c: "Tecno", p: 12000 },
-        { n: "AURICULAR BT MODO-706 CROWS", c: "Audio", p: 9900 },
-        { n: "AURICULAR P15 BT MOD63-22", c: "Audio", p: 16999 },
-        { n: "VINCHA BT P47", c: "Audio", p: 9999 },
-        { n: "AFEITADORA METAL MODS-776", c: "Hogar", p: 7999 },
-        { n: "FREIDORA DE AIRE 1800W 10L", c: "Hogar", p: 85000 },
-        { n: "TV BOX STREAM CORE 4-32GB", c: "Hogar", p: 39000 },
-        { n: "PROYECTOR ORVA-HY300", c: "Hogar", p: 79999 },
-        { n: "PARLANTE 15” MODV-0036", c: "Audio", <a href="https://ventastucumanalan.blogspot.com/2026/07/producto-tienda-a.html" target="_blank" style="text-decoration: none; display: inline-block;">
-  <img src="https://ventastucumanalan.blogspot.com/2026/07/producto-tienda-a.html" alt="Producto Tienda A" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #ddd; display: block;">
-</a>
-p: 149999 }
+        { n: "ADAPTADOR AUDIO HEMBRA A 2 JACK MACHO", c: "Tecno", p: 1600, img: "https://placehold.co", link: "#" },
+        { n: "ADAPTADOR IP A JACK 3.5 – BLANCO", c: "Tecno", p: 3999, img: "https://placehold.co+IP", link: "#" },
+        { n: "ADAPTADOR MICROSD A USB", c: "Tecno", p: 750, img: "https://placehold.co", link: "#" },
+        { n: "ADAPTADOR SIM", c: "Tecno", p: 499, img: "https://placehold.co+SIM", link: "#" },
+        { n: "ADAPTADOR HDMI A 2 HDMI", c: "Tecno", p: 3000, img: "https://placehold.co", link: "#" },
+        { n: "MODULADOR FM ALS-A09 – NEGRO", c: "Tecno", p: 12000, img: "https://placehold.co", link: "#" },
+        { n: "AURICULAR BT MODO-706 CROWS", c: "Audio", p: 9900, img: "https://placehold.co", link: "#" },
+        { n: "AURICULAR P15 BT MOD63-22", c: "Audio", p: 16999, img: "https://placehold.co", link: "#" },
+        { n: "VINCHA BT P47", c: "Audio", p: 9999, img: "https://placehold.co", link: "#" },
+        { n: "AFEITADORA METAL MODS-776", c: "Hogar", p: 7999, img: "https://placehold.co", link: "#" },
+        { n: "FREIDORA DE AIRE 1800W 10L", c: "Hogar", p: 85000, img: "https://placehold.co", link: "#" },
+        { n: "TV BOX STREAM CORE 4-32GB", c: "Hogar", p: 39000, img: "https://placehold.co", link: "#" },
+        { n: "PROYECTOR ORVA-HY300", c: "Hogar", p: 79999, img: "https://placehold.co", link: "#" },
+        { n: "PARLANTE 15” MODV-0036", c: "Audio", p: 149999, img: "https://unsplash.com", link: "https://ventastucumanalan.blogspot.com/2026/07/producto-tienda-a.html" }
     ];
 
     function mostrar(prod) {
         const div = document.getElementById('productos');
         div.innerHTML = prod.map(i => {
             const textoMensaje = "¡Hola Alan! Quiero pedir: " + i.n + " ($" + i.p.toLocaleString() + ")";
-            // Enlace corregido usando wa.me
             const urlWa = `https://wa.me/${TU_NUMERO_WHATSAPP}?text=${encodeURIComponent(textoMensaje)}`;
             
             return `
                 <div class="card">
                     <h3>${i.n}</h3>
+                    <a href="${i.link}" target="_blank" class="prod-link-img">
+                        <img src="${i.img}" alt="${i.n}" class="prod-img">
+                    </a>
                     <div>
                         <span class="precio">$${i.p.toLocaleString()}</span>
                         <a class="btn-ws" target="_blank" href="${urlWa}">🛒 PEDIR</a>
@@ -122,5 +124,5 @@ p: 149999 }
     window.onload = () => mostrar(lista);
 </script>
 </body>
-                </html>
-                                                                          
+                                                                          </html>
+                
