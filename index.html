@@ -83,10 +83,7 @@
         { n: "FREIDORA DE AIRE 1800W 10L", c: "Hogar", p: 85000 },
         { n: "TV BOX STREAM CORE 4-32GB", c: "Hogar", p: 39000 },
         { n: "PROYECTOR ORVA-HY300", c: "Hogar", p: 79999 },
-        { n: "PARLANTE 15” MODV-0036", c: "Audio", <a href="https://ventastucumanalan.blogspot.com/2026/07/producto-tienda-a.html" target="_blank" style="text-decoration: none; display: inline-block;">
-  <img src="https://ventastucumanalan.blogspot.com/2026/07/producto-tienda-a.html" alt="Producto Tienda A" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #ddd; display: block;">
-</a>
-p: 149999 }
+        { n: "PARLANTE 15” MODV-0036", c: "Audio", p: 149999 }
     ];
 
     function mostrar(prod) {
@@ -109,18 +106,14 @@ p: 149999 }
     }
 
     function filtrar(cat, btn) {
-        document.querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
+Ñ        ('.btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         mostrar(cat === 'Todos' ? lista : lista.filter(i => i.c === cat));
     }
 
     document.getElementById('buscador').oninput = (e) => {
         const t = e.target.value.toLowerCase();
-        mostrar(lista.filter(i => i.n.toLowerCase().includes(t)));
-    };
-
-    window.onload = () => mostrar(lista);
-</script>
+        mostrar(lista.filter(i => i.n.toLowerCase().includes
 </body>
     </html>
     
