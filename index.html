@@ -6,7 +6,7 @@
     <title>Tienda Online Alan Gael A&G</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #f4f7f9; text-align: center; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
-        header { padding: 0; background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('avatar.png.png'); background-size: cover; background-position: center 5%; box-shadow: 0 4px 12px rgba(0,0,0,0.2); position: sticky; top: 0; z-index: 100; min-height: 330px; }
+        header { padding: 0; background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('avatar.png'); background-size: cover; background-position: center 5%; box-shadow: 0 4px 12px rgba(0,0,0,0.2); position: sticky; top: 0; z-index: 100; min-height: 330px; }
         .top-info { background: rgba(0, 86, 179, 0.9); color: white; padding: 12px; font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; }
         .header-top-content { display: flex; justify-content: space-between; align-items: flex-start; padding: 10px 15px; }
         .logo-circulo { width: 40px; height: 40px; background: #fff; border: 2px solid #00a8ff; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; font-size: 10px; color: #00a8ff; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
@@ -70,23 +70,22 @@
 <script>
     const TU_NUMERO_WHATSAPP = "5493815727447"; 
 
-    // Se agregó la propiedad 'img' (coloca el link directo de la foto terminada en .jpg/.png)
-    // Se agregó la propiedad 'link' para cuando hagan clic sobre la imagen
+    // Ahora usamos enlaces VÁLIDOS de imágenes, y cuando tengas las tuyas solo reemplázalos
     const lista = [
-        { n: "ADAPTADOR AUDIO HEMBRA A 2 JACK MACHO", c: "Tecno", p: 1600, img: "https://placehold.co", link: "#" },
-        { n: "ADAPTADOR IP A JACK 3.5 – BLANCO", c: "Tecno", p: 3999, img: "https://placehold.co+IP", link: "#" },
-        { n: "ADAPTADOR MICROSD A USB", c: "Tecno", p: 750, img: "https://placehold.co", link: "#" },
-        { n: "ADAPTADOR SIM", c: "Tecno", p: 499, img: "https://placehold.co+SIM", link: "#" },
-        { n: "ADAPTADOR HDMI A 2 HDMI", c: "Tecno", p: 3000, img: "https://placehold.co", link: "#" },
-        { n: "MODULADOR FM ALS-A09 – NEGRO", c: "Tecno", p: 12000, img: "https://www.blogger.com/blog/post/edit/4624841228419724662/1336693275921574749", link: "https://www.blogger.com/blog/post/edit/4624841228419724662/1336693275921574749" },
-        { n: "AURICULAR BT MODO-706 CROWS", c: "Audio", p: 9900, img: "https://placehold.co", link: "#" },
-        { n: "AURICULAR P15 BT MOD63-22", c: "Audio", p: 16999, img: "https://placehold.co", link: "#" },
-        { n: "VINCHA BT P47", c: "Audio", p: 9999, img: "https://placehold.co", link: "#" },
-        { n: "AFEITADORA METAL MODS-776", c: "Hogar", p: 7999, img: "https://placehold.co", link: "#" },
-        { n: "FREIDORA DE AIRE 1800W 10L", c: "Hogar", p: 85000, img: "https://placehold.co", link: "#" },
-        { n: "TV BOX STREAM CORE 4-32GB", c: "Hogar", p: 39000, img: "https://placehold.co", link: "#" },
-        { n: "PROYECTOR ORVA-HY300", c: "Hogar", p: 79999, img: "https://placehold.co", link: "#" },
-        { n: "PARLANTE 15” MODV-0036", c: "Audio", p: 149999, img: "https://unsplash.com", link: "https://ventastucumanalan.blogspot.com/2026/07/producto-tienda-a.html" }
+        { n: "ADAPTADOR AUDIO HEMBRA A 2 JACK MACHO", c: "Tecno", p: 1600, img: "https://www.blogger.com/blog/post/edit/4624841228419724662/1336693275921574749", link: "https://ventastucumanalan.blogspot.com/2026/07/producto-tienda-a.html" },
+        { n: "ADAPTADOR IP A JACK 3.5 – BLANCO", c: "Tecno", p: 3999, img: "https://placehold.co/400x300/2ecc71/white?text=ADAPTADOR+IP", link: "#" },
+        { n: "ADAPTADOR MICROSD A USB", c: "Tecno", p: 750, img: "https://placehold.co/400x300/f39c12/white?text=ADAPTADOR+MICROSD", link: "#" },
+        { n: "ADAPTADOR SIM", c: "Tecno", p: 499, img: "https://placehold.co/400x300/9b59b6/white?text=ADAPTADOR+SIM", link: "#" },
+        { n: "ADAPTADOR HDMI A 2 HDMI", c: "Tecno", p: 3000, img: "https://placehold.co/400x300/34495e/white?text=ADAPTADOR+HDMI", link: "#" },
+        { n: "MODULADOR FM ALS-A09 – NEGRO", c: "Tecno", p: 12000, img: "https://placehold.co/400x300/e74c3c/white?text=MODULADOR+FM", link: "#" },
+        { n: "AURICULAR BT MODO-706 CROWS", c: "Audio", p: 9900, img: "https://placehold.co/400x300/1abc9c/white?text=AURICULAR+BT", link: "#" },
+        { n: "AURICULAR P15 BT MOD63-22", c: "Audio", p: 16999, img: "https://placehold.co/400x300/3498db/white?text=AURICULAR+P15", link: "#" },
+        { n: "VINCHA BT P47", c: "Audio", p: 9999, img: "https://placehold.co/400x300/95a5a6/white?text=VINCHA+BT", link: "#" },
+        { n: "AFEITADORA METAL MODS-776", c: "Hogar", p: 7999, img: "https://placehold.co/400x300/e67e22/white?text=AFEITADORA", link: "#" },
+        { n: "FREIDORA DE AIRE 1800W 10L", c: "Hogar", p: 85000, img: "https://placehold.co/400x300/d35400/white?text=FREIDORA+AIRE", link: "#" },
+        { n: "TV BOX STREAM CORE 4-32GB", c: "Hogar", p: 39000, img: "https://placehold.co/400x300/8e44ad/white?text=TV+BOX", link: "#" },
+        { n: "PROYECTOR ORVA-HY300", c: "Hogar", p: 79999, img: "https://placehold.co/400x300/c0392b/white?text=PROYECTOR", link: "#" },
+        { n: "PARLANTE 15” MODV-0036", c: "Audio", p: 149999, img: "https://placehold.co/400x300/27ae60/white?text=PARLANTE+15", link: "#" }
     ];
 
     function mostrar(prod) {
@@ -99,7 +98,7 @@
                 <div class="card">
                     <h3>${i.n}</h3>
                     <a href="${i.link}" target="_blank" class="prod-link-img">
-                        <img src="${i.img}" alt="${i.n}" class="prod-img">
+                        <img src="${i.img}" alt="${i.n}" class="prod-img" loading="lazy">
                     </a>
                     <div>
                         <span class="precio">$${i.p.toLocaleString()}</span>
@@ -124,5 +123,4 @@
     window.onload = () => mostrar(lista);
 </script>
 </body>
-    </html>
-    
+</html>
