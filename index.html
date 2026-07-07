@@ -66,9 +66,6 @@
 </footer>
 
 <script>
-    // TU NÚMERO CONFIGURADO CORRECTAMENTE
-    const TU_NUMERO_WHATSAPP = "5493815727447"; 
-
     const lista = [
         { n: "ADAPTADOR AUDIO HEMBRA A 2 JACK MACHO", c: "Tecno", p: 1600 },
         { n: "ADAPTADOR IP A JACK 3.5 – BLANCO", c: "Tecno", p: 3999 },
@@ -90,8 +87,7 @@
         const div = document.getElementById('productos');
         div.innerHTML = prod.map(i => {
             const textoMensaje = "¡Hola Alan! Quiero pedir: " + i.n + " ($" + i.p.toLocaleString() + ")";
-            // Enlace corregido usando wa.me
-            const urlWa = `https://wa.me/${TU_NUMERO_WHATSAPP}?text=${encodeURIComponent(textoMensaje)}`;
+            const urlWa = "https://whatsapp.com" + encodeURIComponent(textoMensaje);
             
             return `
                 <div class="card">
@@ -106,14 +102,18 @@
     }
 
     function filtrar(cat, btn) {
-Ñ        ('.btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         mostrar(cat === 'Todos' ? lista : lista.filter(i => i.c === cat));
     }
 
     document.getElementById('buscador').oninput = (e) => {
         const t = e.target.value.toLowerCase();
-        mostrar(lista.filter(i => i.n.toLowerCase().includes
+        mostrar(lista.filter(i => i.n.toLowerCase().includes(t)));
+    };
+
+    window.onload = () => mostrar(lista);
+</script>
 </body>
-    </html>
-    
+                </html>
+                
